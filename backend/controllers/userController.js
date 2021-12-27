@@ -1,15 +1,15 @@
 // const ApiError = require('../error/ApiError');
+const ApiError = require('../error/ApiError')
 const uuid = require('uuid')
 const path = require('path');
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
 
-const ApiError = require('../error/ApiError')
 const { User, Tips, Cards } = require('../models/models')
 
 class UserController {
-    async registration(req, res) {
+    async registration(req, res, next) {
 
         const { login, password } = req.body
         if (!login || !password) {
@@ -18,13 +18,11 @@ class UserController {
         }
         const candidate = await User.findOne({ where: { login } })
         if (candidate) {
-
-
             return next(ApiError.badRequest('Пользователь с таким login уже существует'))
         }
         const hashPassword = await bcrypt.hash(password, 5)
         const user = await User.create({ login, password: hashPassword })
-        const token = jwt.sign({ id: user.id, login: user.login }, process.env.SECRET_KEY, { expiresIn: "24h" })
+        const token = jwt.sign({ id: user.id, login: user.login }, process.env.SECRET_KEY, { expiresIn: '24h' })
 
         return res.json({ token })
 
@@ -32,17 +30,29 @@ class UserController {
 
 
 
+    async login(req, res, next) {
+        const { login, password } = req.body
+        const user = await User.findOne({ where: { login } })
+        if (!user) {
+            return next(ApiError.internal("User is not found"))
+        }
+        let comaparePassword = bcrypt.compareSync(password, user.password)
+        if (!comaparePassword) {
+            return next(ApiError.internal("Password is not correct"))
 
-    async login(req, res) {}
+        }
+        const token = jwt.sign({ id: user.id, login: user.login }, process.env.SECRET_KEY, { expiresIn: '24h' })
+        return res.json({ token })
+
+    }
 
 
     async check(req, res, next) {
-        const { id } = req.query
-        if (!id) {
-            return next(ApiError.badRequest('NO ID'))
-        }
-        res.json(id);
+        // const token = jwt.sign({ id: user.id, login: user.login }, process.env.SECRET_KEY, { expiresIn: '24h' })
+        // return res.json({ token })
+        // res.json({ message: 'Everything works' })
     }
+
 
     async create(req, res) {
         try {
@@ -89,7 +99,12 @@ class UserController {
 
 
     async getAll(req, res) {
+        const token = req.headers.authorization.split(' ')[1]
+        const decoded = jwt.verify(token, process.env.SECRET_KEY)
+        const user_id = decoded.id
 
+        const user = await User.findOne({ user_id })
+        return res.json(user)
 
     }
 

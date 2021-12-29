@@ -29,9 +29,7 @@ const start = async() => {
     } catch (e) {
         console.log(e)
     }
-    app.get('/', (req, res) => {
-        res.end('<h1>Home page</h1>')
-    })
+ 
 }
 
 start()

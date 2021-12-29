@@ -32,8 +32,8 @@ const start = async() => {
  
 }
 
-// start()
+start()
 
-app.get('/', (req, res) => {
-    res.end('<h1>Home page</h1>')
-})
+// app.get('/', (req, res) => {
+//     res.end('<h1>Home page</h1>')
+// })

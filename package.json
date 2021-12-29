@@ -6,8 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix && npm run start --prefix"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "mern",
@@ -16,7 +15,7 @@
   "author": "schhhhhweppes",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.0.1",
+    "bcryptjs": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",

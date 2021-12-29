@@ -2,7 +2,7 @@
 const ApiError = require('../error/ApiError')
 const uuid = require('uuid')
 const path = require('path');
-const bcrypt = require('bcrypt')
+const bcryptjs = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
 
@@ -20,7 +20,7 @@ class UserController {
         if (candidate) {
             return next(ApiError.badRequest('Пользователь с таким login уже существует'))
         }
-        const hashPassword = await bcrypt.hash(password, 5)
+        const hashPassword = await bcryptjs.hash(password, 5)
         const user = await User.create({ login, password: hashPassword })
         const token = jwt.sign({ id: user.id, login: user.login }, process.env.SECRET_KEY, { expiresIn: '24h' })
 
@@ -36,7 +36,7 @@ class UserController {
         if (!user) {
             return next(ApiError.internal("User is not found"))
         }
-        let comaparePassword = bcrypt.compareSync(password, user.password)
+        let comaparePassword = bcryptjs.compareSync(password, user.password)
         if (!comaparePassword) {
             return next(ApiError.internal("Password is not correct"))
 

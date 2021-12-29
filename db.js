@@ -13,14 +13,14 @@ sequelize = new Sequelize( process.env.DATABASE_URL, {
 module.exports = sequelize
 
 
-// module.exports = new Sequelize(
-//     process.env.DB_NAME, // Название БД
-//     process.env.DB_USER,
-//     process.env.DB_PASSWORD, {
-//         dialect: 'postgres',
-//         host: process.env.DB_HOST,
-//         port: process.env.DB_PORT
+module.exports = new Sequelize(
+    process.env.DB_NAME, // Название БД
+    process.env.DB_USER,
+    process.env.DB_PASSWORD, {
+        dialect: 'postgres',
+        host: process.env.DB_HOST,
+        port: process.env.DB_PORT
 
-//     }
+    }
 
-// )
+)

@@ -28,13 +28,10 @@ const start = async() => {
         await sequelize.sync()
         app.listen(PORT, () => console.log(`Server started on port ${ PORT }`))
     } catch (e) {
-        throw new Error("No data base access")
+        console.log(e)
+        // throw new Error("No data base access")
     }
  
 }
 
 start()
-
-// app.get('/', (req, res) => {
-//     res.end('<h1>Home page</h1>')
-// })

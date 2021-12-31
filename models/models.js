@@ -48,7 +48,7 @@ const User = sequelize.define('user', {
 
     tips_id: { type: DataTypes.INTEGER },
     future_tips: { type: DataTypes.INTEGER },
-    // history_of_actions: { type: DataTypes.ARRAY(DataTypes.DECIMAL) }, //Возможен баг
+    history_of_actions: { type: DataTypes.ARRAY(DataTypes.DECIMAL) }, //Возможен баг
 
     phone_number: { type: DataTypes.INTEGER },
     cards_id: { type: DataTypes.INTEGER }

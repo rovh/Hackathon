@@ -4,9 +4,9 @@ const clientController = require('./clientController');
 
 class TipsController {
     async create(req, res) {
-        const client_id = clientController.client_id
-        const name = clientController.client_name
-        const tips_amount = clientController.client_tips_amount
+        // const client_id = clientController.client_id
+        // const name = clientController.client_name
+        // const tips_amount = clientController.client_tips_amount
 
 
         // const client = await Client.findOne({where: {id}})

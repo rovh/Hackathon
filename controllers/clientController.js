@@ -8,9 +8,9 @@ class ClientController {
         const client = await Client.create({ name, tips_amount })
 
         module.exports.client_id = client.id 
-        module.exports.client_name = client.name 
-        module.exports.client_tips_amount = client.tips_amount 
-        
+        module.exports.name = client.name 
+        module.exports.tips_amount = client.tips_amount 
+
         next()
     }
     async getAll(req, res) {

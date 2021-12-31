@@ -4,7 +4,7 @@ const clientController = require('./clientController');
 
 class TipsController {
     async create(req, res) {
-        // client_id = clientController.client_id
+        const client_id = clientController.client_id
         // const client = await Client.findOne({where: {id}})
         // const { name } = req.body
         // const date_of_action = new Date()

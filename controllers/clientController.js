@@ -7,7 +7,7 @@ class ClientController {
         const { name, tips_amount } = req.body
         // const date_of_action = new Date();
         // date_of_action = date_of_action.toLocaleString();
-        const client = await Client.create({ name, tips_amount, createdAt })
+        const client = await Client.create({ name, tips_amount })
         return res.json(client)
     }
     async getAll(req, res) {

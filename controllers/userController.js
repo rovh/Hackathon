@@ -65,12 +65,8 @@ class UserController {
 
             } = req.body
             const { img } = req.files
-            let fileName_1 = uuid.v4() + ".jpg"
-            img.mv(path.resolve(__dirname, '..', 'static', fileName_1))
-
-            const { img_qr } = req.files
-            let fileName_2 = uuid.v4() + ".jpg"
-            img_qr.mv(path.resolve(__dirname, '..', 'static', fileName_2))
+            let fileName = uuid.v4() + ".jpg"
+            img.mv(path.resolve(__dirname, '..', 'static', fileName))
 
 
 
@@ -83,8 +79,7 @@ class UserController {
                 history_of_actions,
                 phone_number,
                 cards_id,
-                img: fileName_1,
-                img_qr: fileName_2
+                img: fileName,
             })
 
             return res.json(device)

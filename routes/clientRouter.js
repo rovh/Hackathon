@@ -5,6 +5,7 @@ const clientController = require('../controllers/clientController')
 
 router.post('/', clientController.create)
 router.get('/', clientController.getAll)
+router.get('/', clientController.getOne)
 
 
 module.exports = router

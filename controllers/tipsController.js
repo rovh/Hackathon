@@ -5,7 +5,7 @@ const clientController = require('./clientController');
 class TipsController {
     async create(req, res) {
         const client_id = clientController.client_id
-        const name = ("Tip from" + " " + clientController.name)
+        const name = clientController.name
         const tips_amount = clientController.tips_amount
 
 

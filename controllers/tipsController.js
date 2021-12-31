@@ -13,7 +13,7 @@ class TipsController {
         // const { name } = req.body
         const date_of_action = new Date().toString();
 
-        const tip = await Tips.create( { name, tips_amount, client_id })
+        const tip = await Tips.create( { name, tips_amount, client_id, date_of_action })
         // return res.json(tip)
         return res.json(tip)
     }

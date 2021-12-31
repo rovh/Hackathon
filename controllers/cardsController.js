@@ -9,11 +9,17 @@ class CardsController {
         const card = await Cards.create({ name, card_number, validity_period, cvc })
         return res.json(card)
     }
-    async getAll(req, res) {
-            const cards = await Cards.findAll()
-            return res.json(cards)
-        }
 
+    async getAll(req, res) {
+        const cards = await Cards.findAll()
+        return res.json(cards)
+    }
+
+    async getOne(req, res){
+        const { id } = req.params // Получем из указанного в роуте
+        const card = await Cards.findOne({where: {id}})
+        return res.json(card)
+    }
 
 }
 

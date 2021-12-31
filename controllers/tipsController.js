@@ -21,10 +21,9 @@ class TipsController {
     }
 
     async getOne(req, res){
-        
-
-
-
+        const { id } = req.params // Получем из указанного в роуте
+        const tip = await Tips.findOne({where: {id}})
+        return res.json(tip)
     }
 
 }

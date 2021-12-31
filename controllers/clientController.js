@@ -6,8 +6,8 @@ class ClientController {
     async create(req, res) {
         const { name, tips_amount } = req.body
         const client = await Client.create({ name, tips_amount })
-        return res.json(client)
-        // next()
+        // return res.json(client)
+        next()
     }
     async getAll(req, res) {
         const cards = await Client.findAll()

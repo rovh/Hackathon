@@ -11,7 +11,8 @@ class ClientController {
         module.exports.client_name = client.name 
         module.exports.client_tips_amount = client.tips_amount 
 
-        next()
+        // next()
+        return res.json("123")
     }
     async getAll(req, res) {
         const cards = await Client.findAll()

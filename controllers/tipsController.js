@@ -11,7 +11,7 @@ class TipsController {
 
         // const client = await Client.findOne({where: {id}})
         // const { name } = req.body
-        const date_of_action = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
+        const date_of_action = new Date().toString();
 
         const tip = await Tips.create( { name, tips_amount, client_id })
         // return res.json(tip)

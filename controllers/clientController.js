@@ -6,8 +6,11 @@ class ClientController {
     async create(req, res, next) {
         const { name, tips_amount } = req.body
         const client = await Client.create({ name, tips_amount })
+
         module.exports.client_id = client.id 
-        // return res.json(client)
+        module.exports.client_name = client.name 
+        module.exports.client_tips_amount = client.tips_amount 
+        
         next()
     }
     async getAll(req, res) {

@@ -6,7 +6,7 @@ const tipsController = require('../controllers/tipsController')
 
 router.post('/', clientController.create, tipsController.create)
 router.get('/', clientController.getAll)
-router.get('/', clientController.getOne)
+router.get('/:id', clientController.getOne)
 
 
 module.exports = router

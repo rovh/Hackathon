@@ -8,13 +8,10 @@ class TipsController {
         const name = clientController.client_name
         const tips_amount = clientController.client_tips_amount
 
-
-        // const client = await Client.findOne({where: {id}})
-        // const { name } = req.body
         const date_of_action = new Date().toString();
 
         const tip = await Tips.create( { name, tips_amount, client_id, date_of_action })
-        // return res.json(tip)
+   
         return res.json(tip)
     }
 

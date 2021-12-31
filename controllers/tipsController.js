@@ -10,7 +10,7 @@ class TipsController {
         // const date_of_action = new Date()
         // const tip = await Tips.create( client_id)
         // return res.json(tip)
-        return res.json("ERRor")
+        return res.json(client_id)
     }
 
     async getAll(req, res) {

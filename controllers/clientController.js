@@ -13,14 +13,14 @@ class ClientController {
 
         next()
     }
-    
+
     async getAll(req, res) {
         const cards = await Client.findAll()
         return res.json(cards)
     }
 
     async getOne(req, res){
-        const { id } = req.body
+        const { id } = req.params // Получем из указанного в роуте
         const card = await Client.findOne({where: {id}})
         return res.json(card)
     }    

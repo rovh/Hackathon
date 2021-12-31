@@ -7,12 +7,18 @@ class TipsController {
         const tip = await Tips.create({ name })
         return res.json(tip)
     }
-    async getAll(req, res) {
-            const tips = await Tips.findAll()
-            return res.json(tips)
-        }
-        // async getONE(req, res) {}
 
+    async getAll(req, res) {
+        const tips = await Tips.findAll()
+        return res.json(tips)
+    }
+
+    async getOne(req, res){
+        
+
+
+
+    }
 
 }
 

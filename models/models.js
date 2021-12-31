@@ -37,7 +37,6 @@ const Cards = sequelize.define('cards', {
 const User = sequelize.define('user', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
 
-    // login: { type: DataTypes.STRING },
     login: { type: DataTypes.STRING, unique: true },
     password: { type: DataTypes.STRING },
 
@@ -46,11 +45,10 @@ const User = sequelize.define('user', {
     patronymic: { type: DataTypes.STRING },
 
     img: { type: DataTypes.STRING },
-    img_qr: { type: DataTypes.STRING },
 
     tips_id: { type: DataTypes.INTEGER },
     future_tips: { type: DataTypes.INTEGER },
-    // history_of_actions: { type: DataTypes.ARRAY(DataTypes.DECIMAL) },
+    history_of_actions: { type: DataTypes.ARRAY(DataTypes.DECIMAL) }, //Возможен баг
 
     phone_number: { type: DataTypes.INTEGER },
     cards_id: { type: DataTypes.INTEGER }

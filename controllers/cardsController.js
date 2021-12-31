@@ -13,7 +13,6 @@ class CardsController {
             const cards = await Cards.findAll()
             return res.json(cards)
         }
-        // async getONE(req, res) {}
 
 
 }

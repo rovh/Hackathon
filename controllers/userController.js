@@ -1,4 +1,3 @@
-// const ApiError = require('../error/ApiError');
 const ApiError = require('../error/ApiError')
 const uuid = require('uuid')
 const path = require('path');
@@ -48,9 +47,7 @@ class UserController {
 
 
     async check(req, res, next) {
-        // const token = jwt.sign({ id: user.id, login: user.login }, process.env.SECRET_KEY, { expiresIn: '24h' })
-        // return res.json({ token })
-        // res.json({ message: 'Everything works' })
+      
     }
 
 

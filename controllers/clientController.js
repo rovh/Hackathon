@@ -3,10 +3,11 @@ const ApiError = require('../error/ApiError');
 
 
 class ClientController {
-    async create(req, res) {
+    async create(req, res, next) {
         const { name, tips_amount } = req.body
         const client = await Client.create({ name, tips_amount })
         // return res.json(client)
+        module.exports.client_id = client.id 
         next()
     }
     async getAll(req, res) {

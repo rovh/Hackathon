@@ -1,11 +1,14 @@
 const { Tips } = require('../models/models')
 const ApiError = require('../error/ApiError');
+const clientController = require('./clientController');
 
 class TipsController {
     async create(req, res) {
-        const { name } = req.body
-        const date_of_action = new Date()
-        const tip = await Tips.create({ name, date_of_action })
+        id = clientController.client_id
+        const client = await Client.findOne({where: {id}})
+        // const { name } = req.body
+        // const date_of_action = new Date()
+        const tip = await Tips.create( client_id)
         return res.json(tip)
     }
 

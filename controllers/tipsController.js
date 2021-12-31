@@ -13,7 +13,7 @@ class TipsController {
         // const { name } = req.body
         const date_of_action = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
 
-        const tip = await Tips.create( { name, tips_amount, client_id, date_of_action })
+        const tip = await Tips.create( { name, tips_amount, client_id })
         // return res.json(tip)
         return res.json(tip)
     }

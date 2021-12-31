@@ -7,6 +7,7 @@ const { DataTypes } = require('sequelize')
 const Client = sequelize.define('client', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
 
+    name: {type: DataTypes.STRING},
     tips_amount: { type: DataTypes.FLOAT, allowNull: false },
 
 })
@@ -14,6 +15,7 @@ const Client = sequelize.define('client', {
 const Tips = sequelize.define('tips', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
 
+    name: {type: DataTypes.STRING},
     client_id: { type: DataTypes.INTEGER },
     tips_amount: { type: DataTypes.FLOAT },
     date_of_action: { type: DataTypes.STRING },

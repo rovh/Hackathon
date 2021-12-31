@@ -5,10 +5,9 @@ const ApiError = require('../error/ApiError');
 class ClientController {
     async create(req, res) {
         const { name, tips_amount } = req.body
-        var date_of_action = new Date()
-        // date_of_action = date_of_action.toLocaleString();
-        const client = await Client.create({ name, tips_amount, date_of_action })
+        const client = await Client.create({ name, tips_amount })
         return res.json(client)
+        // next()
     }
     async getAll(req, res) {
         const cards = await Client.findAll()

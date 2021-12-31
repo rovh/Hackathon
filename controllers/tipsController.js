@@ -4,7 +4,8 @@ const ApiError = require('../error/ApiError');
 class TipsController {
     async create(req, res) {
         const { name } = req.body
-        const tip = await Tips.create({ name })
+        const date_of_action = new Date()
+        const tip = await Tips.create({ name, date_of_action })
         return res.json(tip)
     }
 

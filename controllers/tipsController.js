@@ -1,6 +1,6 @@
 const { Tips } = require('../models/models')
 const ApiError = require('../error/ApiError');
-const clientController = require('./clientController');
+// const clientController = require('./clientController');
 
 class TipsController {
     async create(req, res) {

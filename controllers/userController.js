@@ -103,8 +103,7 @@ class UserController {
         // const user_id = decoded.id;
 
         let user_id;
-        jwt.verify(token, procces.env.SECRET_KEY, function(err, decoded){
-        user_id = decoded.id;
+        jwt.verify(token, procces.env.SECRET_KEY, function(err, decoded){user_id = decoded.id});
 
         const user = await User.findOne({  where: user_id  })
         

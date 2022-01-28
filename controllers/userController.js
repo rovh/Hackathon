@@ -109,7 +109,6 @@ class UserController {
         const user = await User.findOne({  where: user_id  })
         
         return res.json(user)
-
     }
 
     

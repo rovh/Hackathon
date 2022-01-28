@@ -99,10 +99,14 @@ class UserController {
 
     async getOne(req, res) {
         const token = req.headers.authorization.split(' ')[1]
-        var decoded = jwt.verify(token, process.env.SECRET_KEY)
-        var user_id = decoded.id;
+        // var decoded = jwt.verify(token, process.env.SECRET_KEY)
+        // var user_id = decoded.id;
 
-        const user = await User.findOne({  _id: user_id  })
+        let user_id;
+        jwt.verify(token, procces.env.secret_key, function(err, decoded){
+        user_id = decoded.id
+
+        const user = await User.findOne({  where: user_id  })
         
         return res.json(user)
 

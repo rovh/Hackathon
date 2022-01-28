@@ -99,6 +99,7 @@ class UserController {
 
     async getOne(req, res) {
 
+        
         const user = await User.findOne({  where : req.user.id  })
         
         return res.json(user)

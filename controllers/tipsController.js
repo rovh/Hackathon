@@ -14,9 +14,7 @@ class TipsController {
    
         module.exports.tips_id_export = tip.id 
 
-        // return res.json(tip)
-
-        next()
+        return res.json(tip)
     }
 
     async getAll(req, res) {

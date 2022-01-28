@@ -48,6 +48,8 @@ class UserController {
 
     async check(req, res, next) {
       
+        return "Пользователь авторизован"
+    
     }
 
 

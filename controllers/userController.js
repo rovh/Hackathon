@@ -104,9 +104,9 @@ class UserController {
         // let user_id;
         // jwt.verify(token, procces.env.SECRET_KEY, function(err, decoded){user_id = decoded.id});
 
-        const {login} = req.body
+        // const {login} = req.body
 
-        const user = await User.findOne({  where : login  })
+        const user = await User.findOne({  where : req.user.id  })
         
         return res.json(user)
     }

@@ -56,7 +56,7 @@ class UserController {
 
     async create(req, res) {
         
-        const tips_id = tipsController.tips_id
+        var tips_id = tipsController.tips_id
         
         
         try {

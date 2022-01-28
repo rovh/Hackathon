@@ -3,6 +3,7 @@ const uuid = require('uuid')
 const path = require('path');
 const bcryptjs = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+const tipsController = require('./tipsController');
 
 
 const { User, Tips, Cards } = require('../models/models')
@@ -54,12 +55,16 @@ class UserController {
 
 
     async create(req, res) {
+        
+        const tips_id = tipsController.tips_id
+        
+        
         try {
             const {
                 name,
                 surname,
                 patronymic,
-                tips_id,
+                
                 future_tips,
                 history_of_actions,
                 phone_number,

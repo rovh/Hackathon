@@ -56,7 +56,7 @@ class UserController {
 
     async create(req, res) {
         
-        var tips_id = tipsController.tips_id
+        const tips_id = tipsController.tips_id_export
         
         
         try {

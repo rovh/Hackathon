@@ -103,7 +103,7 @@ class UserController {
         const user_id = decoded.id
 
         const user = await User.findOne({ user_id })
-        return res.json(decoded.id)
+        return res.json(user)
 
     }
 

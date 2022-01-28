@@ -102,7 +102,7 @@ class UserController {
         const decoded = jwt.verify(token, process.env.SECRET_KEY)
         const user_id = decoded.id
 
-        const user = await User.findOne({  where: { user_id }  })
+        const user = await User.findOne({ { where: { user }  })
         
         return res.json(user)
 

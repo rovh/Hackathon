@@ -11,7 +11,7 @@ class ClientController {
         module.exports.client_name = client.name 
         module.exports.client_tips_amount = client.tips_amount 
 
-        next()
+        return res.json(client)
     }
 
     async getAll(req, res) {

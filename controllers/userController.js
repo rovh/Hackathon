@@ -56,7 +56,7 @@ class UserController {
 
     async create(req, res, next) {
         
-        const tips_id = tipsController.tips_id_export
+       
         
         
         try {
@@ -75,7 +75,7 @@ class UserController {
             let fileName = uuid.v4() + ".jpg"
             img.mv(path.resolve(__dirname, '..', 'static', fileName))
 
-
+            const tips_id = tipsController.tips_id_export
 
             const device = await User.create({
                 name,

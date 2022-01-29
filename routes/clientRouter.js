@@ -5,7 +5,7 @@ const tipsController = require('../controllers/tipsController')
 const userController = require('../controllers/userController')
 
 
-router.post('/', clientController.create, tipsController.create, userController.create)
+router.post('/', clientController.create)
 router.get('/', clientController.getAll)
 router.get('/:id', clientController.getOne)
 

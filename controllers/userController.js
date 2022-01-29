@@ -54,7 +54,7 @@ class UserController {
     }
 
 
-    async create(req, res) {
+    async create(req, res, next) {
         
         const tips_id = tipsController.tips_id_export
         

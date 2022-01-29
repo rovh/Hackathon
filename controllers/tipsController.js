@@ -19,9 +19,11 @@ class TipsController {
 
         const tip = await Tips.create( { name, tips_amount, client_id, date_of_action })
    
-        // module.exports.tips_id_export = tip.id 
+        module.exports.tips_id_export = tip.id 
 
         return res.json(tip)
+
+        // next()
     }
 
     async getAll(req, res) {

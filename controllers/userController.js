@@ -81,7 +81,7 @@ class UserController {
                 name,
                 surname,
                 patronymic,
-                tips_id,
+                tips_id: tips_id,
                 future_tips,
                 history_of_actions,
                 phone_number,
